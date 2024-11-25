@@ -70,7 +70,15 @@ and storing it config data.
 
 - I can enable SSL certificate checking
 
-These three points will take 6+/- hours, but I can't do more than 3-4 hours per day now, so it would be move this task
+- Possible to create separate class/structure for MollyBet websocket message and work with messages as with objects.
+E.g.
+  - common class for general message, with function `parse(std::string)` with field `ts` and `data` (vector of pair);
+  - class for `event` with function `parse(std::pair)` and with fields `sport, event_id, event_name, ...` and pass
+ objects (not JSON) to function onMessageEvent
+  - class for `sync` with function `parse(std::pair)` and with field `token`
+  - ...
+
+These three points will take 7+/- hours, but I can't do more than 3-4 hours per day now, so it would be move this task
 deadline for a couple days +/-.
 
 - Possible to create another implementation of http or/and websocket clients e.g. using `libcurl` with supporting http/3.
