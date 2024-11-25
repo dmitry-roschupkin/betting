@@ -68,7 +68,7 @@ std::string MollyBet::parseTokenData(const std::string& data)
     }
     catch (const std::exception& e)
     {
-        BOOST_THROW_EXCEPTION(std::logic_error(std::string("MollyBet: Invalid session JSON") + e.what()));
+        BOOST_THROW_EXCEPTION(std::invalid_argument(std::string("MollyBet: Invalid session JSON") + e.what()));
     }
 
     return token;
@@ -110,7 +110,7 @@ void MollyBet::processSentMessage(const std::string& sentMessage)
     }
     catch (const std::exception& e)
     {
-        BOOST_THROW_EXCEPTION(std::logic_error(std::string("MollyBet: Invalid message JSON") + e.what()));
+        BOOST_THROW_EXCEPTION(std::invalid_argument(std::string("MollyBet: Invalid message JSON") + e.what()));
     }
 
     for (auto messageJson : data)
@@ -126,7 +126,7 @@ void MollyBet::processSentMessage(const std::string& sentMessage)
         }
         catch (const std::exception& e)
         {
-            BOOST_THROW_EXCEPTION(std::logic_error(std::string("MollyBet: Invalid message JSON") + e.what()));
+            BOOST_THROW_EXCEPTION(std::invalid_argument(std::string("MollyBet: Invalid message JSON") + e.what()));
         }
 
         processMessagePair(messagePair);
@@ -158,7 +158,7 @@ void MollyBet::onMessageEvent(const std::pair<std::string, json::value>& message
     }
     catch (const std::exception& e)
     {
-        BOOST_THROW_EXCEPTION(std::logic_error(std::string("MollyBet: Invalid event JSON") + e.what()));
+        BOOST_THROW_EXCEPTION(std::invalid_argument(std::string("MollyBet: Invalid event JSON") + e.what()));
     }
 
     if (messageContentObject.if_contains("competition_name"))
