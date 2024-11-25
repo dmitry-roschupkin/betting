@@ -60,7 +60,7 @@ RUN apt-get install -y mc aptitude
 COPY . /opt/betting/
 WORKDIR /opt/betting
 
-# RUN gcc -o myapp main.c
-# CMD ["./myapp"]
+RUN make clean
+RUN make
 
-CMD echo hello world
+CMD ./betting/bin/betting
