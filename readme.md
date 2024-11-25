@@ -26,7 +26,8 @@ because need to write and then to support much more code.
 
 I haven't work with `boost` a lot, but looks like it's good choice for this task. I chose `boost` for this task. 
 
-### Structure ###
+
+## Structure ##
 `main.cpp` - file with main function and main coroutine lambda function 
 `client` - folder for http ans websocket clients implementation  
 `mollybet` - folder with MollyBet logic implementation  
