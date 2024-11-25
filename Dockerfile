@@ -32,7 +32,7 @@ RUN ./b2 install
 RUN ldconfig
 
 ###############################################################################
-# Install curl and curllib 8.11
+# Install curl and curllib 8.11 (needed only for spikes)
 ###############################################################################
 WORKDIR /opt/lib
 RUN apt purge -y libcurl4-openssl-dev
@@ -54,7 +54,7 @@ RUN apt-get install libwebsocketpp-dev
 RUN ldconfig
 
 RUN apt-get install -y gawk
-RUN apt-get install -y mc aptitude
+# RUN apt-get install -y mc aptitude
 ###############################################################################
 
 COPY . /opt/betting/
