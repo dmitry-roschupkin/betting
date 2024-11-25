@@ -42,8 +42,8 @@ All MollyBet connection data hardcoded in `MollyBet.h`
 SSL certificate checking disabled now. Need to have root certificates to enable it, or we can use default boost/openssl
 root certificates, but in this case - no any warranty that they are fresh and actual.
 
-### Ideas about project and next iterations/sprints :) ###
 
+## Ideas about project and next iterations/sprints :) ##
 
 - To make this application more structured and flexible need move all connection data to config file.
 It can have JSON format like this:
