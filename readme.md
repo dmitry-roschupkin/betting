@@ -45,40 +45,40 @@ root certificates, but in this case - no any warranty that they are fresh and ac
 
 ## Ideas about project and next iterations/sprints :) ##
 
-- To make this application more structured and flexible need move all connection data to config file.
+1. To make this application more structured and flexible need move all connection data to config file.
 It can have JSON format like this:
-```json
-{
-  "MollyBet": {
-    "username": "username_value",
-    "passwors": "password_value",
-    ...
-  },
-  "OtherBet": {
-    ...
-  }
-  ...
-}
-```
-I can make common `singleton Config` class to read the config file and to storing the data there. We can make 
-additionally classes for each betting website with function `parse` and with needed public members and create 
-a member of each class (or std::map<>) inside the `singleton Config` class. In this case we will have useful 
-and structured configuration data, and each betting side namespace will have own responsibilities about parsing 
+    ```json
+    {
+      "MollyBet": {
+        "username": "username_value",
+        "passwors": "password_value",
+        ...
+      },
+      "OtherBet": {
+        ...
+      }
+      ...
+    }
+    ```
+    I can make common `singleton Config` class to read the config file and to storing the data there. We can make
+additionally classes for each betting website with function `parse` and with needed public members and create
+a member of each class (or std::map<>) inside the `singleton Config` class. In this case we will have useful
+and structured configuration data, and each betting side namespace will have own responsibilities about parsing
 and storing it config data.
-  
-- I can move `ssl::context ctx` to separate singleton class
 
-- I can enable SSL certificate checking
+2. I can move `ssl::context ctx` to separate singleton class
 
-- Possible to create separate class/structure for MollyBet websocket message and work with messages as with objects.
+3. I can enable SSL certificate checking
+
+4. Possible to create separate class/structure for MollyBet websocket message and work with messages as with objects.
 E.g.
-  - common class for general message, with function `parse(std::string)` with field `ts` and `data` (vector of pair);
-  - class for `event` with function `parse(std::pair)` and with fields `sport, event_id, event_name, ...` and pass
- objects (not JSON) to function onMessageEvent
-  - class for `sync` with function `parse(std::pair)` and with field `token`
-  - ...
+      - common class for general message, with function `parse(std::string)` with field `ts` and `data` (vector of pair);
+      - class for `event` with function `parse(std::pair)` and with fields `sport, event_id, event_name, ...` and pass
+objects (not JSON) to function onMessageEvent
+      - class for `sync` with function `parse(std::pair)` and with field `token`
+      - ...
 
-These three points will take 7+/- hours, but I can't do more than 3-4 hours per day now, so it would be move this task
+These four points will take 7+/- hours, but I can't do more than 3-4 hours per day now, so it would be move this task
 deadline for a couple days +/-.
 
 - Possible to create another implementation of http or/and websocket clients e.g. using `libcurl` with supporting http/3.
