@@ -2,8 +2,8 @@ CXX := g++
 
 
 # Betting variables
-# BETTING_CXXFLAGS := -c -Wall -std=c++23 -O2
-BETTING_CXXFLAGS := -c -Wall -std=c++23 -g
+BETTING_CXXFLAGS := -c -Wall -std=c++23 -O2
+# BETTING_CXXFLAGS := -c -Wall -std=c++23 -g
 
 
 BETTING_PATH := betting
