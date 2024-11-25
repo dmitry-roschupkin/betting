@@ -15,12 +15,14 @@ docker run -it --rm betting /bin/bash
 
 ## About ##
 For this task next libraries were researched:  
-   - libcurl
-   - websocketpp
-   - boost
-   - libwebsokets
+   - `libcurl`
+   - `websocketpp`
+   - `boost`
+   - `libwebsokets`
 
 You can see some drafts in the folder `spike`. You can see some conclusions in each `spike` test file.
+I didn't make spike using `libwebsokets`, it's very low level and need to have good argumentation to use it, 
+because need to write and then to support much more code.
 
 I haven't work with `boost` a lot, but looks like it's good choice for this task. I chose `boost` for this task. 
 
