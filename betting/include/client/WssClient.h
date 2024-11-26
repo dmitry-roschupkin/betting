@@ -31,7 +31,7 @@ public:
     // For current task we don't need it, that's why according "YAGNI" principle it not implemented here
 
     // Close the stream
-    net::awaitable<void> shutdown() const;
+    net::awaitable<void> shutdown();
 
 private:
     std::string_view host;

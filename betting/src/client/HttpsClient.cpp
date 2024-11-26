@@ -47,7 +47,7 @@ net::awaitable<void> HttpsClient::connect()
 
 net::awaitable<http::request<http::string_body>> HttpsClient::sendSimpleRequest(
     http::verb method, std::string_view target, std::string_view body, std::string_view contentType, int version
-) const
+)
 {
     // Set up an HTTP request message
     http::request<http::string_body> request{ method, target, version };
@@ -76,7 +76,7 @@ net::awaitable<http::request<http::string_body>> HttpsClient::sendSimpleRequest(
     co_return request;
 }
 
-net::awaitable<http::response<http::dynamic_body>> HttpsClient::readSimpleResponse() const
+net::awaitable<http::response<http::dynamic_body>> HttpsClient::readSimpleResponse()
 {
     // This buffer is used for reading and must be persisted
     beast::flat_buffer buffer;
@@ -90,12 +90,12 @@ net::awaitable<http::response<http::dynamic_body>> HttpsClient::readSimpleRespon
     co_return response;
 }
 
-ssl::stream<beast::tcp_stream>& HttpsClient::getStream() const
+ssl::stream<beast::tcp_stream>& HttpsClient::getStream()
 {
     return *pStream;
 }
 
-net::awaitable<void> HttpsClient::shutdown() const
+net::awaitable<void> HttpsClient::shutdown()
 {
     // Set the timeout.
     beast::get_lowest_layer(*pStream).expires_after(std::chrono::seconds(30));

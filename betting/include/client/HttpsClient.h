@@ -30,13 +30,13 @@ public:
     // Send simple https request
     net::awaitable<http::request<http::string_body>> sendSimpleRequest(
         http::verb method, std::string_view target, std::string_view body = "", std::string_view contentType = "", int version = 11
-    ) const;
+    );
     // To make requests with e.g. large body you can use getStream() function and the use stream directly or make a new method in this class
     // and use boost parsers and buffer
     // For current task we don't need it, that's why according "YAGNI" principle it not implemented here
 
     // Send simple https response
-    net::awaitable<http::response<http::dynamic_body>> readSimpleResponse() const;
+    net::awaitable<http::response<http::dynamic_body>> readSimpleResponse();
     // To make requests with e.g. large body you can use getStream() function and the use stream directly or make a new method in this class
     // and use boost parsers and buffer, e.g.:
     //
@@ -62,10 +62,10 @@ public:
     // For current task we don't need it, that's why according "YAGNI" principle it not implemented here
 
     // Return stream to give possibility make some operation outside.
-    ssl::stream<beast::tcp_stream>& getStream() const;
+    ssl::stream<beast::tcp_stream>& getStream();
 
     // Close the stream
-    net::awaitable<void> shutdown() const;
+    net::awaitable<void> shutdown();
 
 private:
     std::string_view host;

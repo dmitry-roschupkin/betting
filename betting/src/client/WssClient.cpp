@@ -85,7 +85,7 @@ net::awaitable<beast::flat_buffer> WssClient::readSimpleMessage()
     co_return buffer;
 }
 
-net::awaitable<void> WssClient::shutdown() const
+net::awaitable<void> WssClient::shutdown()
 {
     // Close the WebSocket connection
     co_await pStream->async_close(websocket::close_code::normal);
