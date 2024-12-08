@@ -179,9 +179,9 @@ void MollyBet::printCompetitions() const
     }
 }
 
-// std::set<std::string>& MollyBet::getCompetitions()
+// const std::set<std::string>& MollyBet::getCompetitions()
 // {
-//    return competitions;
+//     return competitions;
 // }
 
 }

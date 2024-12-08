@@ -30,7 +30,7 @@ public:
 
     void printCompetitions() const;
 
-    // std::set<std::string> &getCompetitions();
+    // const std::set<std::string> &getCompetitions();
 
 private:
     static constexpr std::string mbMESSAGE_SYNC = "sync";
@@ -51,7 +51,7 @@ private:
     std::set<std::string> competitions;
     int messageLoopStatus = mbMESSAGE_LOOP_STATE_NO_RUN;
 
-    //This configuration date can be moved to config and we can make singleton class MollyBetConfig to read and store this data
+    // This configuration date can be moved to config and we can make singleton class MollyBetConfig to read and store this data
     const std::string username = "devinterview";
     const std::string password = "OwAb6wrocirEv";
 
