@@ -51,9 +51,9 @@ private:
     std::set<std::string> competitions;
     int messageLoopStatus = mbMESSAGE_LOOP_STATE_NO_RUN;
 
-    // This configuration date can be moved to config and we can make singleton class MollyBetConfig to read and store this data
-    const std::string username = "devinterview";
-    const std::string password = "OwAb6wrocirEv";
+    // Next configuration data has to be red from config. It's located here only as example
+    const std::string username = "username example";
+    const std::string password = "password example";
 
     const std::string host = "api.mollybet.com";
     const std::string port = "443";

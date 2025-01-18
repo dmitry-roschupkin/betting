@@ -1,4 +1,14 @@
-## Run ##
+## Task
+The requirements are as follows:
+
+1. Make an HTTP request to login to [Molly API](https://api.mollybet.com/docs/). You can use the test credentials username=*** password=*** to get back a session token.
+2. Connect a websocket to the Molly API stream.
+3. Read messages up until the "sync" message.
+4. Disconnect the websocket, and print out the distinct "competition_name" values seen in "event" messages your received.
+
+Please include a self-contained Dockerfile that fetches libraries and compiles your code so we can test it, and also a readme file that explains the structure and decisions in your code.
+
+## Run
 To build docker need to execute command: 
 ```shell script
 docker build -t betting .
@@ -13,7 +23,7 @@ or, if you need bash you can execute command:
 docker run -it --rm betting /bin/bash
 ```
 
-## About ##
+## About
 For this task next libraries were researched:  
    - `libcurl`
    - `websocketpp`
@@ -27,7 +37,7 @@ because need to write and then to support much more code.
 I haven't work with `boost` a lot, but looks like it's good choice for this task. I chose `boost` for this task. 
 
 
-## Structure ##
+## Structure
 `main.cpp` - file with main function and main coroutine lambda function 
 `client` - folder for http ans websocket clients implementation  
 `mollybet` - folder with MollyBet logic implementation  
@@ -43,7 +53,7 @@ SSL certificate checking disabled now. Need to have root certificates to enable 
 root certificates, but in this case - no any warranty that they are fresh and actual.
 
 
-## Ideas about project and next iterations/sprints :) ##
+## Ideas about project and next iterations/sprints :)
 
 1. To make this application more structured and flexible need move all connection data to config file.
 It can have JSON format like this:
